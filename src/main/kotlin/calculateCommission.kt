@@ -5,7 +5,7 @@ fun calculateCommission(
 ): Double {
     return when (cardType) {
         "MasterCard", "Maestro" -> {
-            if (previousTransfers <= 75000) {
+            if (previousTransfers + currentTransfer <= 75000) {
                 0.0
             } else {
                 0.006 * currentTransfer + 20
